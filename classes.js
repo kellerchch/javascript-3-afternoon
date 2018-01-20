@@ -29,7 +29,19 @@
   Call your class Employee and receive all the data in the constructor in the order listed above.
 */
 
-//Code Here
+class Employee {
+  constructor(first_name, last_name, email, age) 
+  {
+  this.first_name = first_name
+  this.last_name = last_name
+  this.email = email
+  this.age = age
+  }
+  makeWidget (){
+    return this.first_name + ' ' + this.last_name + ' ' + 'Widget'
+  }
+  }
+  var Chris = new Employee("Chris", "Keller", "kellerchch@gmail.com", 41)
 
 
 
