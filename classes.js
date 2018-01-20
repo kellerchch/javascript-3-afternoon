@@ -61,8 +61,27 @@ class Employee {
   Call your new class Manager
 */
 
-//Code Here
+class Manager {
+  constructor(first_name, last_name, email, age) 
+  {
+  this.first_name = first_name
+  this.last_name = last_name
+  this.email = email
+  this.age = age
+  this.reports = []
+  }
 
+  hire (employee){
+    this.reports.push(employee)
+  }
+
+  fire (index){
+    this.reports.splice(index,1)
+  }
+
+}
+
+var Mgr = new Manager ("Joe", "Smith", "ghgm@gmail.com", 40)
 
 
 ////////// PROBLEM 3 //////////
@@ -87,7 +106,62 @@ class Employee {
   Call your new class ProgressiveManager
 */
 
-//Code Here
+class ProgressiveManager {
+  constructor(first_name, last_name, email, age, title, bonus) 
+  {
+  this.first_name = first_name
+  this.last_name = last_name
+  this.email = email
+  this.age = age
+  this.title = 'Not a manager'
+  this.bonus = 0
+  this.reports = []
+  }
+
+updateTitle (num) {
+  if (num === 0) {
+    this.title = "Not a manager"
+  }
+  else if (num >= 1 && num <= 3) {
+    this.title = "Barely Manager";
+  }
+  else if (num >= 4 && num <= 10) {
+    this.title = "Mostly Manager";
+  } 
+  else if (num >= 11 && num <= 50) {
+    this.title = "Manager";
+  }
+  else if (num >= 51 && num <= 100) {
+    this.title = "Manager Plus";
+  }
+  else if (num > 100){
+    this.title = "Bestest Manager";
+  }
+}
+
+hire (employee){
+  this.reports.push(employee);
+  this.updateTitle(this.reports.length);
+}
+
+fire (index){
+  this.reports.splice(index,1);
+  this.updateTitle(this.reports.length);
+  this.bonus+=100;
+}
+}
+  // 1. Create an update title function with titles in there // and take in a number . // based on the number of reports added in to the test 
+  // if logic and then the result
+
+  // hire (employee){
+  //   this.reports.push(employee)
+  // }
+
+  // fire (index){
+  //   this.reports.splice(index,1)
+  // }
+
+
 
 
 
