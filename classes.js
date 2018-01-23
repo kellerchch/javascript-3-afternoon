@@ -150,20 +150,6 @@ fire (index){
   this.bonus+=100;
 }
 }
-  // 1. Create an update title function with titles in there // and take in a number . // based on the number of reports added in to the test 
-  // if logic and then the result
-
-  // hire (employee){
-  //   this.reports.push(employee)
-  // }
-
-  // fire (index){
-  //   this.reports.splice(index,1)
-  // }
-
-
-
-
 
 ////////// PROBLEM 4 - Black Diamond //////////
 
@@ -188,6 +174,36 @@ fire (index){
         - It should set decrease wear_and_tear_count by 10, and set needs_reboot to false
 */
 
-//Code Here
+// constructor({a = 'default a value', b = 'default b value', c = 'default c value'} = {a:'default option a', b:'default option b', c:'default option c'}) {
+//   this.a = a;
+//   this.b = b;
+//   this.c = c;
+// }
+
+class Machine {
+  constructor({widgets_made_count = 0, wear_and_tear_count = 0, needs_reboot = false 
+  })
+  {
+  this.widgets_made_count = widgets_made_count
+  this.wear_and_tear_count = wear_and_tear_count
+  this.needs_reboot = needs_reboot
+}
+
+ makeWidgets (number){
+   this.widgets_made_count =+ number && 
+   if (this.widgets_made_count === 50) {
+     this.wear_and_tear_count =+ 1;
+}
+}
+
+fixMachine (){
+  this.needs_reboot = true;
+}
+
+reboot () {
+  this.wear_and_tear_count =- 10 && this.needs_reboot = false;
+}
+
+}
 
 
