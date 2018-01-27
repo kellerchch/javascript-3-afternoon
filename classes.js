@@ -181,19 +181,22 @@ fire (index){
 // }
 
 class Machine {
-  constructor({widgets_made_count = 0, wear_and_tear_count = 0, needs_reboot = false 
-  })
-  {
-  this.widgets_made_count = widgets_made_count
-  this.wear_and_tear_count = wear_and_tear_count
-  this.needs_reboot = needs_reboot
+
+  constructor (widgets_made_count, wear_and_tear_count, needs_reboot)
+{
+  this.widgets_made_count = 0
+  this.wear_and_tear_count = 0
+  this.needs_reboot = false
 }
 
  makeWidgets (number){
-   this.widgets_made_count =+ number && 
-   if (this.widgets_made_count === 50) {
-     this.wear_and_tear_count =+ 1;
-}
+   this.widgets_made_count += number
+
+   var num = (number/50)
+   num = Math.floor(num)
+
+   this.wear_and_tear_count = this.wear_and_tear_count + num
+
 }
 
 fixMachine (){
@@ -201,9 +204,36 @@ fixMachine (){
 }
 
 reboot () {
-  this.wear_and_tear_count =- 10 && this.needs_reboot = false;
-}
+
+
+return () => {
+
+  this.wear_and_tear_count -= 10 
+  this.needs_reboot = false;
+};
 
 }
 
+}
 
+// this was Zach and Luke's effort to get the tests to pass.
+// var newMachine = new Machine();
+// var myFunc = newMachine.reboot();
+// myFunc()
+
+// return function() {
+//   console.log('this', this)
+
+//   this.wear_and_tear_count -= 10 
+//   this.needs_reboot = false;
+
+// }
+
+// }
+
+
+// var newMachine = new Machine();
+// var myFunc = newMachine.reboot();
+// const test = myFunc.bind(newMachine)
+// console.log('this is test', test)
+// test()
