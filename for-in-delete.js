@@ -99,11 +99,11 @@ return object
 function secrets (object){
   var str = "";
   for (var key in object) {
-    if (object[key])startsWith("sh");
-   {str += (object.key)
-    }
+    if (key.startsWith("sh"))
+      {str += (object[key])
+      }
 }
-return str;
+return str
 }
 
 
@@ -176,7 +176,7 @@ for (var key in deleteTheBigNumbers) {
 
 function startsWithK (object) {
   for (var key in object) {
-    if (object[key].startsWith("k")) {delete object[key]}
+    if (key.startsWith("k")) {delete object[key]}
   }
   return object;
 }
@@ -195,7 +195,7 @@ function startsWithK (object) {
 
 function hiddenTreasure (object){
   for (var key in object) {
-    if (object[key].includes('treasure')){
+    if (object[key].includes('treasure')===false){
       delete (object[key])
     }
   }
