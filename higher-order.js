@@ -21,8 +21,14 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 //Code Here
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+function makeEven (num, i, mixedNumbers) {
+ return (num % 2 === 0)}
+let evenNumbers = mixedNumbers.filter(makeEven)
 
+// This was help from Kyle Cornwall 
+// let evenNumbers = mixedNumbers.filter(num => num % 2 === 0)
+ 
+// evenNumbers
 
 
 ////////// PROBLEM 2 //////////
@@ -43,8 +49,7 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
-//Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices = prices.map(prices => prices * 1.07);
 
 
 
@@ -62,8 +67,10 @@ const populations = [8175133, 3792621, 2695598, 2100263];
   (runningTotal, curElement, curIndex, wholeArray)=>{} Arrow Form
 */
 
-//Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+function sumPopulations (total, num) {
+  return total + num;
+}
+let totalPopulation  = populations.reduce(sumPopulations)
 
 
 
@@ -88,8 +95,13 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
   Use the filter method to return only the monsters that have a CP of over 200.
 */
 
-//Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+
+function justMonsters (item) {
+  // console.log('item', item.cp)
+
+  return (item.CP > 200)
+}
+let myStrongest = monstersInYourPocket.filter(justMonsters)
 
 
 
@@ -106,7 +118,12 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a high order method to get sum of all the order totals
 */
 
-let ordersTotal //Code Here
+function totalSum (totals, currentValue) {
+  var total = totals + (currentValue.price + currentValue.tax);
+    console.log (total)
+    return total 
+  }
+  let ordersTotal = orders.reduce(totalSum, 0)
 
 
 
@@ -126,6 +143,12 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
+function ownerTotals(totals, currentValue) {
+  if (currentValue.owner === "Bob") {
+    return total = totals + currentValue.price}
+    else return totals 
+    //I always have to deliver a reduce value to a variable even // if I'm not going to use it as in this case. 
+}
+let bobsTotal = purchases.reduce(ownerTotals, 0)
 
 
